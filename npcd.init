@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /usr/sbin/npcd -f /etc/pnp4nagios/npcd.cfg
