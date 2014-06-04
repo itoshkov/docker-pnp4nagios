@@ -13,6 +13,7 @@ RUN apt-get update
 RUN apt-get install -y pnp4nagios nagios-plugins runit
 
 RUN htpasswd -c -b /etc/nagios3/htpasswd.users nagiosadmin nagios
+RUN ln -sf /etc/pnp4nagios/nagios.cfg /etc/nagios3/conf.d/pnp4nagios.cfg
 RUN ln -sf /etc/pnp4nagios/apache.conf /etc/apache2/conf-available/pnp4nagios.conf
 RUN cd /etc/apache2/conf-enabled && ln -sf ../conf-available/pnp4nagios.conf .
 
